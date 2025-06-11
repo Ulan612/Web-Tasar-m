@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+function arttır() {
+document.getElementById("sayac").innerText++;
+}
+function azalt() {
+    let sayac = document.getElementById("sayac").innerText;
+
+    if (sayac >= 1) {
+        document.getElementById("sayac").innerText = sayac -1;
+    }
+    else {
+        alert("0 a gelmezz");
+    }
+}
+</script>
+</head>
+<body>
+      <div style="background-color: lightskyblue; padding: 10px;">
+          <input type="button" onclick="arttır()" value="Sayıyı Arttır">
+          <h1 id="sayac">0</h1>
+          <input type="button" onclick="azalt()" value="Sayıyı azalt">
+      </div>
+</body>
+</html>

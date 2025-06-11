@@ -1,0 +1,16 @@
+<html>
+<head>
+</head>
+<body>
+<h1>Favori Meyveler</h1>
+<ul id="meyveListem"></ul>
+<script>
+ let kullanici= {ad: "Alper", favoriMeyveler:"Çilek,Muz,Kavun"};
+ let liste=document.getElementById("meyveListem");
+ kullanici.favoriMeyveler.forEach(function(meyve)) {
+    let li=document.createElement("li");
+    liste.appendChild(li);
+ };
+</script>
+</body>
+</html>

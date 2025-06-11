@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<body>
+      <form>
+            <input type="text" placeholder="Sayı giriniz." value="5" onkeypress="kareAl(this)">
+            <p id="sonuc">0</p>
+      </form>
+
+     <script>
+        function kareAl(a) {
+     sayi=a.value;
+     sonuc=sayi*sayi;
+     document.getElementById("sonuc").innerHTML=sonuc;
+     document.write(sonuc);
+}
+   </script>
+</body>
+</html>

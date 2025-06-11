@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" ></script>
+    <link rel=" stylesheet" href="still.css" >
+</head>
+<body style="background-color: darkslateblue; color: white">
+    <div id="cerceve">
+    <span id="kutu1"> Kutu <br> 1</span>
+    <span id="kutu2"> Kutu <br> 2</span>
+    <span id="kutu3"> Kutu <br> 3</span>
+    <span id="kutu4"> Kutu <br> 4</span>
+    </div>
+    <br>
+    <input type="button" id="islem1"   value="Tüm kutuları boya"><br>
+    <input type="button" id="islem2"   value="Kutu 2'den önce ekle"><br>
+    <input type="button" id="islem3"   value="Kutu 2'den sonra ekle"><br>
+    <input type="button" id="islem4"   value="Tüm kutuların önüne ekle"><br>
+    <input type="button" id="islem5"   value="Tüm kutuların sonuna ekle"><br>
+    <input type="button" id="islem6"   value="Kutu 4'ün İçini boşalt"><br>
+    <input type="button" id="islem7"   value="Kutu 4'ü kaldır"><br>
+
+    <script>
+
+        $(document).ready(function(){
+   $("islem1").click(function(){
+      $("span").css({"backgroundColor":"tomato","color":"white"});
+      //css() : stil eklemeye yarar
+   });
+        $("#islem2").click(function(){
+            $("#kutu2").before("<span><u>yeni<br>Kutu</u></span>")
+            //before(): seçili elemandan önce içerik ekler
+        });
+        $("#islem3").click(function(){
+            $("#kutu2").after("<span><u>yeni<br>Kutu</u></span>")
+            //after(): seçili elemandan sonra içerik ekler
+        });
+        $("#islem4").click(function(){
+            $("#cerceve").prepend("<span><u>yeni<br>Kutu</u></span>")
+            //prepend(): seçili elemanların başlarına  içerik ekler
+        });
+        $("#islem5").click(function(){
+            $("#cerceve").append("<span><u>yeni<br>Kutu</u></span>")
+            //append(): seçili elemanların sonlarına içerik ekler
+        });
+        $("#islem6").click(function(){
+            $("#kutu4").empty();
+            //empty(): seçili elemanların alt ögelerini kaldırır.
+        });
+        $("#islem7").click(function(){
+            $("#kutu4").remove();
+            //remove(): seçili elemanları ve alt ögelerini kaldırır.
+        });
+        });
+    </script>
+</body>
+</html>

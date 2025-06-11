@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+function arttır() {
+document.getElementById("sayac").innerText++;
+}
+function azalt() {
+    let sayac = document.getElementById("sayac").innerText;
+
+    if (sayac >= 1) {
+        document.getElementById("sayac").innerText = sayac -1;
+    }
+    else {
+        alert("sayac 0 altında olmaz");
+    }
+}
+        function renkDegistir() {
+        var renkler=["red","blue","yellow","skyblue","pink","purple"];
+        var rastgele;
+        var i;
+        for (i=0; i<8; i++) {
+        rastgele=Math.floor(Math.random() * 8); // 0 ile rastgele sayı üretir.
+        document.getElementsByTagName("div")[i].style.backgroundColor=renkler[rastgele];
+           }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <input type="button" onclick="arttır()" value="Sayıyı Arttır">
+        <h1 id="sayac">0</h1>
+        <input type="button" onclick="azalt()" value="Sayıyı azalt">
+    </div>
+
+    <div>1</div> <div>2</div> <div>3</div> <div>4</div>
+    <div>5</div> <div>6</div> <div>7</div> <div>8</div>
+    <input type="button" onclick="renkDegistir()" value="Renkleri değiştir">
+
+    <style>
+        div{
+            width:20px; height:20px; border:2px solid gray;
+            margin:2px; text-align: center; float: left;
+        }
+    </style>
+    
+</body>
+</html>

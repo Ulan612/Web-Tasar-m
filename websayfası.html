@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <form>
+            Web sayfasını <b>Koyu</b> modda kullanmak isten mi <br>
+            <input type="radio" name="mod" id="evet">Evet<br>
+            <input type="radio" name="mod" id="evet">Evet<br>
+            <input type="button" vale="modAyarla" onclick="modDegiş()">
+        </form>
+    </div>
+    <script>
+        function modDegis() {
+            if(document.getElementsById("eveet").checked==true) {
+                documents.getElementsByTagName("body")[0].style.backgroundColor="black";
+                documents.getElementsByTagName("body")[0].style.color="white";
+            } else {
+                documents.getElementsByTagName("body")[0].style.backgroundColor="white";
+                documents.getElementsByTagName("body")[0].style.color="black";
+            }
+        }
+    </script>
+</body>
+</html>
