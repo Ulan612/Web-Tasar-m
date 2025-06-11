@@ -1,0 +1,61 @@
+<!DOCTYPE html> <!-- HTML5 doctype bildirimi -->
+<html lang="tr"> <!-- Sayfa dili Türkçe olarak ayarlandı -->
+<head>
+  <meta charset="UTF-8"> <!-- Türkçe karakter desteği -->
+  <title>Hesap Makinesi</title> <!-- Sekmede görünen başlık -->
+</head>
+<body style="text-align: center; margin-top: 50px; font-family: Arial;">
+  <!-- Sayfa içeriği ortalanmış ve üstten boşluk bırakılmış -->
+  
+  <h3 style="color: red;">Hesap Makinesi</h3> <!-- Kırmızı renkli başlık -->
+  <h1><strong>Basit Hesap Makinesi</strong></h1> <!-- Büyük başlık -->
+
+  <!-- Kullanıcıdan ilk sayıyı alır -->
+  <input type="number" id="sayi1"><br><br>
+
+  <!-- Kullanıcıdan ikinci sayıyı alır -->
+  <input type="number" id="sayi2"><br><br>
+
+  <!-- Kullanıcının yapmak istediği işlemi seçmesini sağlar -->
+  <select id="islem">
+    <option value="toplama">Toplama</option>
+    <option value="cikarma">Çıkarma</option>
+    <option value="carpma">Çarpma</option>
+    <option value="bolme">Bölme</option>
+  </select><br><br>
+
+  <!-- Hesaplama işlemini başlatan buton -->
+  <button onclick="hesapla()">Hesapla</button>
+
+  <!-- Sonucun gösterileceği paragraf alanı -->
+  <p id="sonuc" style="font-size: 20px; margin-top: 20px;">Sonuç: </p>
+
+  <script>
+    // hesapla isimli fonksiyon tanımlanıyor
+    function hesapla() {
+      // sayi1 ve sayi2 inputlarından alınan değerler float sayıya dönüştürülür
+      var sayi1 = parseFloat(document.getElementById("sayi1").value);
+      var sayi2 = parseFloat(document.getElementById("sayi2").value);
+      
+      // Seçilen işlem alınır (toplama, çıkarma vb.)
+      var islem = document.getElementById("islem").value;
+      var sonuc;
+
+      // Seçilen işleme göre hesaplama yapılır
+      if (islem === "toplama") {
+        sonuc = sayi1 + sayi2; // toplama işlemi
+      } else if (islem === "cikarma") {
+        sonuc = sayi1 - sayi2; // çıkarma işlemi
+      } else if (islem === "carpma") {
+        sonuc = sayi1 * sayi2; // çarpma işlemi
+      } else if (islem === "bolme") {
+        // Bölme işleminde sıfıra bölme kontrolü yapılır
+        sonuc = sayi2 !== 0 ? sayi1 / sayi2 : "Tanımsız (0'a bölünemez)";
+      }
+
+      // Sonuç, sayfada ilgili alana yazdırılır
+      document.getElementById("sonuc").innerText = "Sonuç: " + sonuc;
+    }
+  </script>
+</body>
+</html>

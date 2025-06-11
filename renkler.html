@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Renk Değiştirici</title>
+  <style>
+    body {
+      font-family: Georgia, serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    h2 {
+      color: red;
+    }
+    .kutu {
+      width: 400px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: #1AA244;
+      color: black;
+      border-radius: 10px;
+      font-size: 20px;
+    }
+    button {
+      font-size: 16px;
+      padding: 8px 15px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Rastgele Arkaplan Değiştirme</h2>
+
+  <div class="kutu" id="renkKutusu">
+    <h1>Renk Değiştirici</h1>
+    <p>Şu anki renk: <span id="renkKodu">#1AA244</span></p>
+    <button onclick="renkDegistir()">Renk Değiştir</button>
+  </div>
+
+  <script>
+    function rastgeleRenkUret() {
+      const harfler = "0123456789ABCDEF";
+      let renk = "#";
+      for (let i = 0; i < 6; i++) {
+        renk += harfler[Math.floor(Math.random() * 16)];
+      }
+      return renk;
+    }
+
+    function renkDegistir() {
+      const yeniRenk = rastgeleRenkUret();
+      const kutu = document.getElementById("renkKutusu");
+      const renkKodu = document.getElementById("renkKodu");
+
+      kutu.style.backgroundColor = yeniRenk;
+      renkKodu.textContent = yeniRenk;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Yaş Hesapla</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #e6f3ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    div {
+      text-align: center;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    input, button {
+      font-size: 16px;
+      margin: 10px 0;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h2>Yaş Hesaplayıcı</h2>
+    <p>Doğum Yılınızı Girin:</p>
+    <input id="yil" type="number" placeholder="2001">
+    <br>
+    <button onclick="hesapla()">Hesapla</button>
+    <p id="sonuc"></p>
+  </div>
+  <script>
+    function hesapla() {
+      const yil = Number(document.getElementById("yil").value);
+      const simdikiYil = new Date().getFullYear();
+      const yas = simdikiYil - yil;
+      const sonuc = document.getElementById("sonuc");
+
+      if (yil && yil <= simdikiYil) {
+        sonuc.textContent = "Şu an " + yas + " yaşındasınız.";
+        sonuc.style.color = "green";
+      } else {
+        sonuc.textContent = "Geçerli bir yıl girin.";
+        sonuc.style.color = "red";
+      }
+    }
+
+    document.getElementById("yil").addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        hesapla();
+      }
+    });
+  </script>
+</body>
+</html>

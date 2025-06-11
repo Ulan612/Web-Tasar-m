@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Zamanlayıcı</title>
+</head>
+<body>
+  <h2>Geri Sayım Zamanlayıcı</h2>
+  <input id="saniye" type="number" placeholder="Saniye girin">
+  <button onclick="baslat()">Başlat</button>
+  <p id="sayac"></p>
+
+  <script>
+    let interval;
+    function baslat() {
+      let kalan = parseInt(document.getElementById("saniye").value);
+      clearInterval(interval); // eski zamanlayıcıyı durdur
+      interval = setInterval(() => {
+        if (kalan <= 0) {
+          clearInterval(interval);
+          document.getElementById("sayac").textContent = "Süre doldu!";
+        } else {
+          document.getElementById("sayac").textContent = kalan + " saniye kaldı";
+          kalan--;
+        }
+      }, 1000);
+    }
+  </script>
+</body>
+</html>

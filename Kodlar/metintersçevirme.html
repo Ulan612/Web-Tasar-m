@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Metin Ters Çevirici</title>
+  <style>
+    body {
+      font-family: Georgia, serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    .kutu {
+      background-color: #f7f7f7;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 400px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+    input[type="text"] {
+      width: 80%;
+      padding: 8px;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    button {
+      font-size: 16px;
+      padding: 6px 12px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    .sonuc {
+      margin-top: 15px;
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2 style="color: red;">Metin Ters Çevirme</h2>
+
+  <div class="kutu">
+    <h3>Metin Ters Çevirici</h3>
+    <input type="text" id="girdi" placeholder="Lütfen metni girin">
+    <br>
+    <button onclick="tersCevir()">Ters Çevir</button>
+    <div class="sonuc" id="sonucMetin"></div>
+  </div>
+
+  <script>
+    function tersCevir() {
+      const girdi = document.getElementById("girdi").value;
+      const ters = girdi.split("").reverse().join("");
+      document.getElementById("sonucMetin").textContent = `Çevrilen Metin: ${ters}`;
+    }
+  </script>
+
+</body>
+</html>

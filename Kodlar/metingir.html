@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Metin Sayacı</title>
+  <style>
+     body {
+      font-family: Georgia, serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+    h1 {
+      font-size: 32px;
+    }
+    #sayac {
+      color: red;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+    textarea {
+      width: 300px;
+      height: 80px;
+      font-size: 18px;
+      padding: 10px;
+    }
+    .sonuc {
+      font-size: 22px;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div id="sayac">Sayaç</div>
+  <h1>Metin Girin</h1>
+  <textarea id="metin" maxlength="100" oninput="metniSay()"></textarea>
+  <div class="sonuc" id="bilgi"></div>
+
+  <script>
+    function metniSay() {
+      const metin = document.getElementById("metin").value.trim();
+      const karakterSayisi = metin.length;
+      const kelimeSayisi = metin === "" ? 0 : metin.split(/\s+/).length;
+      const kalanKarakter = 100 - karakterSayisi;
+
+      document.getElementById("bilgi").innerText =
+        `${karakterSayisi} karakter | ${kelimeSayisi} kelime | ${kalanKarakter} karakter kaldı`;
+    }
+  </script>
+</body>
+</html>

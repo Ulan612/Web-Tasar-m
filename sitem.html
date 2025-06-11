@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resepsiyonist Paneli</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script>
+    function navigateTo(pageId) {
+      document.querySelectorAll('.page').forEach(page => page.classList.add('hidden'));
+      document.getElementById(pageId).classList.remove('hidden');
+    }
+  </script>
+</head>
+<body class="bg-gray-100 font-sans">
+  <!-- Header -->
+  <header class="bg-white shadow flex items-center justify-between px-6 py-4">
+    <img src="ll.jpg" alt="Logo" class="h-12 cursor-pointer" onclick="navigateTo('home')">
+    <nav>
+      <button onclick="navigateTo('home')" class="mx-2">Ana Sayfa</button>
+      <button onclick="navigateTo('about')" class="mx-2">Hakkında</button>
+      <button onclick="navigateTo('rooms')" class="mx-2">Odalar</button>
+      <button onclick="navigateTo('contact')" class="mx-2">İletişim</button>
+      <button onclick="navigateTo('reservations')" class="mx-2">Yeni Rezervasyon</button>
+    </nav>
+  </header>
+
+  <!-- Pages -->
+  <main class="p-6">
+    <section id="home" class="page">
+      <h1 class="text-3xl font-bold mb-4">Hoş Geldiniz</h1>
+      <p>Resepsiyon panelimize hoş geldiniz. Buradan rezervasyonları, oda durumlarını ve müşteri isteklerini yönetebilirsiniz.</p>
+    </section>
+
+    <section id="about" class="page hidden">
+      <h1 class="text-2xl font-bold mb-4">Hakkımızda</h1>
+      <p>Profesyonel hizmet sunan bir oteliz. Müşteri memnuniyeti odaklıyız.</p>
+    </section>
+
+    <section id="rooms" class="page hidden">
+      <h1 class="text-2xl font-bold mb-4">Odalar</h1>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white shadow p-4 rounded">
+          <img src="https://source.unsplash.com/featured/?hotel-room" alt="Oda 101" class="rounded mb-2">
+          <h2 class="font-semibold">Oda 101</h2>
+          <p>Durum: <span class="text-green-500">Boş</span></p>
+        </div>
+        <div class="bg-white shadow p-4 rounded">
+          <img src="https://source.unsplash.com/featured/?luxury-hotel-room" alt="Oda 102" class="rounded mb-2">
+          <h2 class="font-semibold">Oda 102</h2>
+          <p>Durum: <span class="text-red-500">Dolu</span></p>
+        </div>
+        <!-- Daha fazla oda buraya eklenebilir -->
+      </div>
+    </section>
+
+    <section id="contact" class="page hidden">
+      <h1 class="text-2xl font-bold mb-4">İletişim</h1>
+      <p>Telefon: +90 123 456 7890</p>
+      <p>Email: info@otel.com</p>
+    </section>
+
+    <section id="reservations" class="page hidden">
+      <h1 class="text-2xl font-bold mb-4">Yeni Rezervasyon</h1>
+      <form class="bg-white p-4 rounded shadow space-y-4">
+        <input type="text" placeholder="Ad Soyad" class="w-full p-2 border rounded">
+        <input type="date" placeholder="Giriş Tarihi" class="w-full p-2 border rounded">
+        <input type="date" placeholder="Çıkış Tarihi" class="w-full p-2 border rounded">
+        <input type="number" placeholder="Ücret" class="w-full p-2 border rounded">
+        <textarea placeholder="Müşteri İstekleri" class="w-full p-2 border rounded"></textarea>
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Rezervasyon Ekle</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

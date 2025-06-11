@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Sayaç</title>
+</head>
+<body>
+  <h2>Sayaç</h2>
+  <h1 id="sayi">0</h1>
+  <button onclick="arttir()">Artır</button>
+  <button onclick="azalt()">Azalt</button>
+
+  <script>
+    let sayi = 0;
+    function arttir() {
+      sayi++;
+      document.getElementById("sayi").textContent = sayi;
+    }
+    function azalt() {
+      sayi--;
+      document.getElementById("sayi").textContent = sayi;
+    }
+  </script>
+</body>
+</html>

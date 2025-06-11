@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Not Alma Uygulaması</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 50px;
+    }
+    h1 {
+      color: red;
+    }
+    h2 {
+      font-size: 40px;
+    }
+    input[type="text"] {
+      padding: 10px;
+      font-size: 24px;
+      width: 300px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 20px;
+      margin-left: 10px;
+    }
+    ul {
+      list-style-type: disc;
+      padding-left: 0;
+    }
+    li {
+      font-size: 28px;
+      margin-top: 20px;
+    }
+    .note {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .note button {
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Not Alma Uygulaması</h1>
+  <h2>Basit Not Alıcı</h2>
+
+  <input type="text" id="noteInput" placeholder="Notunuzu buraya yazın">
+  <button onclick="addNote()">Not Ekle</button>
+
+  <ul id="noteList"></ul>
+
+  <script>
+    function addNote() {
+      const input = document.getElementById("noteInput");
+      const noteText = input.value.trim();
+
+      if (noteText === "") return;
+
+      const li = document.createElement("li");
+      li.className = "note";
+
+      const span = document.createElement("span");
+      span.textContent = noteText;
+
+      const btn = document.createElement("button");
+      btn.textContent = "Sil";
+      btn.onclick = function () {
+        li.remove();
+      };
+
+      li.appendChild(span);
+      li.appendChild(btn);
+
+      document.getElementById("noteList").appendChild(li);
+      input.value = "";
+    }
+  </script>
+
+</body>
+</html>

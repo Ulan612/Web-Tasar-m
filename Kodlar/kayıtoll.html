@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Kayıt Ol</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ff00ee;
+      text-align: center;
+      margin-top: 50px;
+    }
+    h2 {
+      color: #333;
+    }
+    form {
+      background-color: white;
+      padding: 30px;
+      margin: auto;
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #28a745;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+    .error {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Kayıt Ol</h2>
+
+  <form onsubmit="return kontrolEt()">
+    <input type="text" id="adsoyad" placeholder="Ad Soyad" required><br>
+    <input type="email" id="email" placeholder="E-posta" required><br>
+    <input type="password" id="sifre" placeholder="Şifre" required><br>
+    <input type="password" id="sifreTekrar" placeholder="Şifre (Tekrar)" required><br>
+    <button type="submit">Kayıt Ol</button>
+    <p id="mesaj" class="error"></p>
+  </form>
+
+  <script>
+    function kontrolEt() {
+      const sifre = document.getElementById("sifre").value;
+      const sifreTekrar = document.getElementById("sifreTekrar").value;
+      const mesaj = document.getElementById("mesaj");
+
+      if (sifre !== sifreTekrar) {
+        mesaj.textContent = "Şifreler uyuşmuyor!";
+        return false;
+      }
+
+      mesaj.textContent = "";
+      alert("Kayıt başarılı!");
+      return true;
+    }
+  </script>
+
+</body>
+</html>
